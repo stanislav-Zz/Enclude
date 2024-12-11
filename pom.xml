@@ -41,7 +41,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring-boot.version}</version>
                 <configuration>
-                    <mainClass>com.example.Application</mainClass> <!-- Замените на ваш основной класс -->
+                    <mainClass>org.example.Application</mainClass> <!-- Замените на ваш основной класс -->
                 </configuration>
             </plugin>
         </plugins>
