@@ -18,5 +18,11 @@ WORKDIR /app
 # Копируем собранный JAR файл из предыдущего этапа
 COPY --from=build /app/target/your-app.jar /app/your-app.jar
 
+# Устанавливаем переменную окружения PORT
+ENV PORT 8080
+
 # Устанавливаем точку входа для запуска приложения
 ENTRYPOINT ["java", "-jar", "/app/your-app.jar"]
+
+# Указываем порт, который будет прослушиваться приложением
+EXPOSE 8080
