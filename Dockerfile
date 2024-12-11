@@ -9,7 +9,7 @@ COPY . .
 RUN chmod +x mvnw
 
 # Выполняем сборку проекта
-RUN ./mvnw clean package
+RUN ./mvnw clean package -Dmaven.repo.local=/app/.m2/repository
 
 # Используем минимальный образ JDK для запуска приложения
 FROM openjdk:17-jdk-slim
