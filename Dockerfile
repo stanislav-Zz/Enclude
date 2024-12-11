@@ -5,12 +5,8 @@ WORKDIR /app
 # Копируем все файлы проекта в контейнер
 COPY . .
 
-# Устанавливаем права на выполнение для mvnw
-RUN chmod +x mvnw
-
-# Выполняем сборку проекта с явным указанием локального репозитория
-ENV MAVEN_OPTS="-Dmaven.repo.local=/app/.m2/repository"
-RUN ./mvnw clean package
+# Выполняем сборку проекта
+RUN mvn clean package -Dmaven.repo.local=/app/.m2/repository
 
 # Используем минимальный образ JDK для запуска приложения
 FROM openjdk:17-jdk-slim
