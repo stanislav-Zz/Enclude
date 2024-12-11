@@ -1,4 +1,8 @@
-build:
-  commands:
-    - chmod +x mvnw
-    - ./mvnw clean package
+services:
+  - type: web
+    name: your-service-name
+    env: docker
+    dockerfilePath: Dockerfile
+    plan: free
+    branch: feature/projectNew-01
+    autoDeploy: true
