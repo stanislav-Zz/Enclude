@@ -16,13 +16,13 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
 
 # Копируем собранный JAR файл из предыдущего этапа
-COPY --from=build /app/target/your-app.jar /app/your-app.jar
+COPY --from=build /app/target/EducationalProject-1.0-SNAPSHOT.jar /app/EducationalProject-1.0-SNAPSHOT.jar
 
 # Устанавливаем переменную окружения PORT
 ENV PORT 8080
 
 # Устанавливаем точку входа для запуска приложения
-ENTRYPOINT ["java", "-jar", "/app/your-app.jar"]
+ENTRYPOINT ["java", "-jar", "/app/EducationalProject-1.0-SNAPSHOT.jar"]
 
 # Указываем порт, который будет прослушиваться приложением
 EXPOSE 8080
