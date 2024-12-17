@@ -20,6 +20,38 @@
             max-width: 100%;
             height: auto;
         }
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .login-form input {
+            margin: 5px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        .login-form button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .gallery-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50; /* Зеленый фон */
+            color: white; /* Белый текст */
+            border: none; /* Убираем границу */
+            border-radius: 5px; /* Скругленные углы */
+            text-decoration: none; /* Убираем подчеркивание */
+            display: inline-block; /* Делаем элемент блочным */
+        }
+        .gallery-button:hover {
+            background-color: #45a049; /* Темно-зеленый при наведении */
+        }
     </style>
 </head>
 <body>
@@ -27,6 +59,7 @@
     <h1 th:text="${message}"></h1>
     <img th:src="@{/images/sample.jpeg}" alt="Sample Image"/>
     <p th:text="${additionalText}"></p>
+    <a th:href="@{/gallery}" class="gallery-button">Посмотреть галерею</a>
 </div>
 </body>
 </html>
